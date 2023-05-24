@@ -1,0 +1,9 @@
+ESCOLA
+* Aluno -> [CP]cgm, nome, [CE Telefone.id]id_telefone, rua, numero, complemento, [CE Turma.codigo]turma, [CE Escola.cnpj]escola;
+* Escola -> [CP]cnpj, rua, numero, complemento, [CE Telefone.id]id_telefone, nome; 
+* Professor -> [CP]matricula, nome, [CE Telefone.id]id_telefone;
+* EscolaProfesso -> [CE Escola.cnpj]escola, [CE Professor.matricula]professor, data_admicao;
+* Disciplina -> [CP]codigo, nome, carga_horaria, ementa, [CE Professor.matricula]professor;
+* Turma -> [CP]codigo, sala, turno, [CE Escola.cnpj]escola;
+* TurmaDisciplina -> [CE Turma.codigo]turma, [CE Disciplina.codigo]disciplina, data_inicio, data_termino;
+* Telefone -> [CP]id, ddd, numero;

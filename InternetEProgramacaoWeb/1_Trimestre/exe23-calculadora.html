@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function calcula(operacao){
+            let valor1 = document.querySelector('#valor1');
+            let valor2 = document.querySelector('#valor2');
+            console.log(valor1, valor2);
+
+            let resultado = eval(valor1.value + operacao + valor2.value);
+            document.getElementById('result').value = resultado;
+        }
+
+        // function setFocus(){
+        //     document.querySelector('.valor1').focus();
+        //     return;
+        // }
+    </script>
+
+    <input type="text" id="valor1">
+    <br>
+    <input type="text" id="valor2">
+    <br>
+    <button onclick="calcula('+')">+</button>
+    <button onclick="calcula('-')">-</button>
+    <button onclick="calcula('*')">*</button>
+    <button onclick="calcula('/')">/</button>
+    <br>
+    <input type="text" id="result">
+    
+</body>
+</html>

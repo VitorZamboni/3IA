@@ -1,0 +1,13 @@
+program ProjectBolinhas;
+
+uses
+  Forms,
+  UnitBolinhas in 'UnitBolinhas.pas' {FormBolinha};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFormBolinha, FormBolinha);
+  Application.Run;
+end.

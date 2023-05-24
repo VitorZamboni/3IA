@@ -1,0 +1,14 @@
+1) * departamentos ([CP]sigla, nome, valor_orcamento)
+    * empregados ([CP]matricula, nome, cargo, salario, [CE]sigla_departamento)
+
+2) * pedidos ([CP]numero, data_entraga, data_pedido)
+    * itens_pedidos ([CP]numero_item, quantidade, valor, [CE]numero_pedido)
+
+3) * departamentos (nome, [CP]sigla, [CE]matricula_funcionario_gerente)
+    * funcionarios ([CP]matricula, nome)
+
+4) * projetos ([CP]nome, data_inicio, data_fim, cod_projeto)
+    * funcionarios (nome, data_admissao, [CP]matricula)
+    * funcionario_projeto ([CE]matricula_funcionario, [CE]cod_projeto, quantidade_hora, data_alocacao, [CP]id)
+
+5) * disciplinas ([CP]codigo, nome, quantidade_horas, cod_outra_disciplina)
