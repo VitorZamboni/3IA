@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-nav {
-    background-color: rgb(231, 140, 3);
+.nav {
+    background-color: rgb(200, 200, 200);
+    position: sticky;
 }
 
 .logo {
-    margin-right: 70%;
+    margin-right: 60%;
 }
 
 p {
@@ -15,6 +16,10 @@ p {
 
 .image {
     text-align: center;
+}
+
+.subtitle{
+    margin-top: 2em;
 }
 
 i {
