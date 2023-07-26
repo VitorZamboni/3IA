@@ -1,0 +1,106 @@
+unit UnitNotas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons;
+
+type
+  TFormNotas = class(TForm)
+    EditNota1: TEdit;
+    EditNota2: TEdit;
+    EditNota3: TEdit;
+    EditNota4: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    LabelMedia: TLabel;
+    ButtonClean: TBitBtn;
+    ButtonClose: TBitBtn;
+    ButtonMedia: TBitBtn;
+    LabelStatus: TLabel;
+    procedure ButtonMediaClick(Sender: TObject);
+    procedure ButtonCleanClick(Sender: TObject);
+    procedure ButtonCloseClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+    
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormNotas: TFormNotas;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormNotas.ButtonMediaClick(Sender: TObject);
+var
+  nota1, nota2, nota3, nota4, media: Single;
+  code: Integer;
+begin
+  if((EditNota1.Text<>'') and (EditNota2.Text<>'') and
+    (EditNota3.Text<>'') and (EditNota4.Text<>''))
+  then
+  begin
+    val(EditNota1.Text, nota1, code);
+    val(EditNota2.Text, nota2, code);
+    val(EditNota3.Text, nota3, code);
+    val(EditNota4.Text, nota4, code);
+
+    media := (nota1+nota2+nota3+nota4)/4;
+
+    if(media>=6) then
+    begin
+      LabelStatus.Caption := 'Aprovado';
+      LabelStatus.Font.Color := rgb(0,255,0);
+    end
+    else
+    begin
+      LabelStatus.Caption := 'Reprovado';
+      LabelStatus.Font.Color := clRed;
+    end;
+    LabelMedia.Caption := FloatToStr(media);
+  end
+  else
+  begin
+    ShowMessage('Informe todas as notas');
+    EditNota1.SetFocus;
+  end;
+end;
+procedure TFormNotas.ButtonCleanClick(Sender: TObject);
+begin
+  EditNota1.Text := '';
+  EditNota2.Text := '';
+  EditNota3.Text := '';
+  EditNota4.Text := '';
+
+  LabelStatus.Caption := '';
+
+  LabelMedia.Caption := '';
+
+  EditNota1.SetFocus;
+end;
+
+procedure TFormNotas.ButtonCloseClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TFormNotas.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  if(Key = #13) then
+  begin
+    key := #0;
+    Perform(WM_NEXTDLGCTL, 0, 0);
+  end;
+end;
+
+
+end.

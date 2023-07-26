@@ -1,0 +1,26 @@
+ESCOLA
+
+* Aluno -> [CP]cod_aluno, nome, rua, numero, complemento, [CE Escola.cnpj]escola_cnpj;
+
+* Escola -> [CP]cnpj, enderoco, nome, telefone; 
+
+* Professor -> [CP]matricula, nome, rua, numero, complemento, data_admicao, [CE Escola.cnpj]escola_cnpj;
+
+* Matricula -> [CP]cod_matricula, [CE Turma.cod_turma]cod_turma, [CE Aluno.cod_aluno]cod_aluno, data_inicio, data_fim;
+
+* Disciplina -> [CP]codigo_disciplina, nome, carga_horaria, ementa;
+
+* Turma -> [CP]codigo_turma, sala, turno, [CE Escola.cnpj]cnpj_escola;
+
+* TurmaDisciplina -> [CP]cod_turma_disciplina [CE Turma.codigo_turma]turma, [CE Disciplina.codigo_disciplina]disciplina, data_inicio, data_termino;
+
+* DisciplinaProfessor -> [CP]cod_disciplina_professor, [CE Professor.matricula]matricula_professor, [CE Disciplina.codigo_disciplina]cod_disciplina; 
+
+* Telefone -> [CP]cod_telefone, ddd, numero;
+
+* ProfessorTelefone -> [CP]id_professor_telefone, [CE Telefone.cod_telefone]cod_telefone, [CE Professor.matricula]matricula_professor;
+
+* AlunoTelefone -> [CP]id_professor_telefone, [CE Telefone.cod_telefone]cod_telefone, [CE Aluno.cod_aluno]cod_aluno;
+
+
+

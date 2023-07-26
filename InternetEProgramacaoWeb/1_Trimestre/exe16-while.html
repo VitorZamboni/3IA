@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primos com while</title>
+</head>
+<body>
+    <script>
+        var numero = window.prompt("Digite um numero");
+        i = 0;
+        contador=1;
+        while(i<=numero/2){
+            if(numero%i==0){
+                contador++;
+            }
+            i++;
+        }
+        if(contador<=2){
+            document.write(numero+" é primo");
+        }
+        else{
+            document.write(numero+" não é primo");
+        }
+    </script>
+</body>
+</html>

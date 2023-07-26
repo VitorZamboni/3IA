@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function equacaoSegundoGrau(a, b, c){
+            if(a == 0){
+                return "Indeterminado, a = 0"
+            }
+            delta = raizDeDelta(a, b, c);
+            if(isNaN(delta)){
+                return "Indeterminado";
+            }
+            x1 = (-b + delta)/2*a;
+            x2 = (-b - delta)/2*a;
+            return "x' = "+x1+ " | x'' = "+x2;
+        }
+        function raizDeDelta(a, b, c){
+           return Math.sqrt((b*b) - 4 * a *c);
+        }
+        document.write(equacaoSegundoGrau(0,2,-5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

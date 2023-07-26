@@ -1,0 +1,18 @@
+BIBLIOTECA
+* Usuario -> [CP]matri, nome end, email;
+
+* Livro -> [CP]cod_livro, titulo, edicao;
+
+* Assunto -> [CP]cod_assunto, nome, [CE Composto.cod_composto]cod_composto;
+
+* Autor -> [CP]cod_autor, nome, nacionalidade;
+
+* Emprestimo -> [CE Usuario.matri] matri_usuario, [CE Livro.cod]cod_livro, dt_emp, dt_dev, [CP]cod_emprestimo;
+
+* Reserva -> [CE Usuario.matri] matri_usuario, [CE Livro.cod]cod_livro, dt_res, [CP]cod_reserva;
+
+* LivroAutor -> [CP]cod_livro_autor, [CE Livro.cod_livro]cod_livro, [CE Autor.cod_autor]cod_autor;
+
+* Classificacao-> [CP]cod_classificado, [CE Livro.cod_livro]cod_livro, [CE Assunto.cod_assunto]cod_assunto;
+
+* Composto-> [CP]cod_composto, assunto, sub_assunto;

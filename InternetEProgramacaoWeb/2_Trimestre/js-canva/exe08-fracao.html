@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        function desenhaQuadrado (x, y, size, cor){
+            var tela= document.querySelector('canvas');
+            const pincel = tela.getContext('2d');
+
+            pincel.fillStyle = cor;
+            pincel.fillRect(x, y, size, size);
+            pincel.fillStroke = 'black';
+            pincel.strokeRect(x,y,size,size);
+        }
+        function desenhaTexto(texto, x, y){
+            var tela= document.querySelector('canvas');
+            const pincel = tela.getContext('2d');
+
+            pincel.font = "20px Georgia";
+            pincel.fillStyle = 'green';
+            pincel.fillText(texto, x, y);
+        }
+        function divideRetangulo(size, numeroDeQuadrados){
+            for(i=0; i<600; i+=size){
+                var y = 50
+                if(i+size==600){
+                    desenhaQuadrado(i, y, size, "white");
+                    let fracao = `1/${numeroDeQuadrados}`;
+                    desenhaTexto(fracao, i, 70 );
+                }else{
+                    desenhaQuadrado(i, y, size, "blue");
+                }
+            }
+        }
+
+        var numeroDeQuadrados = window.prompt("Em quantas vezes queres dividir a caixa", "4")
+        size = 600/numeroDeQuadrados;
+        divideRetangulo(size, numeroDeQuadrados);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        nomeEditora = "Campus";
+        categoria = "Informatica";
+    </script>
+</head>
+<body>
+    <p id="p"></p>
+    <button onclick="clicou(45)">clique</button>
+    <script>
+        document.write("A editora "+nomeEditora+" produz livros de "+categoria);
+        
+        function clicou(numero){
+            document.getElementById("p").innerHTML = numero;
+        }
+    </script>
+</body>
+</html>

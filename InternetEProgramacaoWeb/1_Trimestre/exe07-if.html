@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var credito = 500;
+        var preco = 100;
+        var novoArtigo = "Livro";
+        var carrinho;
+
+        if(credito >= preco){
+            document.write("Comprou artigo: "+novoArtigo);
+            document.write("<br> Valor do artigo "+preco);
+            carrinho = carrinho + novoArtigo;
+            credito -= preco;
+            document.write("<br>Seu crédito é: "+credito);
+        } else{
+            document.write("crédido insuficiente");
+            window.location = "exe06.html";
+        }
+
+
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - estrutura condicional</title>
+</head>
+<body>
+    
+</body>
+</html>

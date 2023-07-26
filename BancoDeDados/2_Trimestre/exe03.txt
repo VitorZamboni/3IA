@@ -1,0 +1,10 @@
+﻿LOJA
+* Pedido -> [CP]id_pedido, data_de_entraga, quantidade,  [CE Produto]id_produto,  [CE Cliente.cpf]cpf;
+
+* Produto -> [CP]id_produto, nome, modelo, preco, marca, [CE Funcionario.id_funcionario]id_funcionario;
+
+* Funcionario -> [CP]id_funcionario, nome, administrador;
+
+* Cliente -> [CP]cpf, nome, telefone, email, endereço, data_nascimento, [CE Funcionario.id_funcionario]id_funcionario;
+
+

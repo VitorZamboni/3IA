@@ -1,0 +1,41 @@
+object FormPrincipal: TFormPrincipal
+  Left = 192
+  Top = 124
+  Width = 1176
+  Height = 687
+  Caption = 'Formul'#225'rio Principal'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ButtonEscrever: TButton
+    Left = 328
+    Top = 272
+    Width = 75
+    Height = 25
+    Caption = '&Escrever'
+    TabOrder = 0
+    OnClick = ButtonEscreverClick
+  end
+  object EditNome: TEdit
+    Left = 432
+    Top = 272
+    Width = 121
+    Height = 21
+    TabOrder = 1
+  end
+  object EditApagar: TButton
+    Left = 328
+    Top = 328
+    Width = 75
+    Height = 25
+    Caption = 'Apagar'
+    TabOrder = 2
+    OnClick = EditApagarClick
+  end
+end

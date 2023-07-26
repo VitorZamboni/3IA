@@ -1,0 +1,185 @@
+object FormLetras: TFormLetras
+  Left = 192
+  Top = 117
+  Width = 1235
+  Height = 734
+  Caption = 'WordAlterator'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -19
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 24
+  object Bevel1: TBevel
+    Left = 16
+    Top = 16
+    Width = 1073
+    Height = 121
+  end
+  object LabelTexto: TLabel
+    Left = 48
+    Top = 40
+    Width = 195
+    Height = 24
+    Caption = 'Aprender Delphi '#233' paia'
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 152
+    Width = 350
+    Height = 200
+    Caption = '&Fonte'
+    TabOrder = 0
+    object RadioButtonArial: TRadioButton
+      Left = 16
+      Top = 40
+      Width = 241
+      Height = 17
+      Caption = 'Arial'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Arial Narrow'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RadioButtonArialClick
+    end
+    object RadioButtonTimes: TRadioButton
+      Left = 16
+      Top = 92
+      Width = 249
+      Height = 17
+      Caption = 'Times New Roman'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = RadioButtonTimesClick
+    end
+    object RadioButtonWing: TRadioButton
+      Left = 16
+      Top = 144
+      Width = 225
+      Height = 25
+      Caption = 'Wingdings'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Arial Narrow'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = RadioButtonWingClick
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 376
+    Top = 152
+    Width = 350
+    Height = 200
+    Caption = 'Es&tilo'
+    TabOrder = 1
+    object RadioButtonNormal: TRadioButton
+      Left = 32
+      Top = 40
+      Width = 113
+      Height = 17
+      Caption = 'Normal'
+      TabOrder = 0
+      OnClick = RadioButtonNormalClick
+    end
+    object RadioButtonNegrito: TRadioButton
+      Left = 32
+      Top = 88
+      Width = 113
+      Height = 25
+      Caption = 'Negrito'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = RadioButtonNegritoClick
+    end
+    object RadioButtonItalico: TRadioButton
+      Left = 32
+      Top = 136
+      Width = 113
+      Height = 17
+      Caption = 'It'#225'lico'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsItalic]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = RadioButtonItalicoClick
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 744
+    Top = 152
+    Width = 350
+    Height = 200
+    Caption = 'Ta&manho'
+    TabOrder = 2
+    object RadioButtonSize10: TRadioButton
+      Left = 16
+      Top = 40
+      Width = 113
+      Height = 17
+      Caption = '10'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RadioButtonSize10Click
+    end
+    object RadioButtonSize14: TRadioButton
+      Left = 16
+      Top = 88
+      Width = 113
+      Height = 17
+      Caption = '14'
+      TabOrder = 1
+      OnClick = RadioButtonSize14Click
+    end
+    object RadioButtonSize36: TRadioButton
+      Left = 16
+      Top = 136
+      Width = 153
+      Height = 41
+      Caption = '36'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -48
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = RadioButtonSize36Click
+    end
+  end
+  object ButtonClose: TButton
+    Left = 16
+    Top = 368
+    Width = 75
+    Height = 25
+    Caption = 'Fechar'
+    TabOrder = 3
+    OnClick = ButtonCloseClick
+  end
+end
