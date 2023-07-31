@@ -19,6 +19,9 @@
         var xAleatorio;
         var yAleatorio;
 
+		var cont = 0; 
+		var dificuldade = 1;
+		
         function desenhaCirculo(x, y, raio,  cor) {
             pincel.fillStyle = cor;
             pincel.beginPath();
@@ -49,22 +52,26 @@
         }
 
         function dispara(evento) {
-            var x = evento.pagex - tela.offsetLeft;
-            var y = evento.pagey - tela.offsetTop;
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
 
             if (((x >= xAleatorio - raio) && (x <= xAleatorio + raio))
                 && ((y >= yAleatorio - raio) && (y <= yAleatorio + raio))) {
-                alert('Acertou');
+                //alert('Acertou');
+                cont++;
+                dificuldade = dificuldade / 0,80;
+                document.getElementById("p").innerHTML = cont;
             }
+            
         }
 
         tela.onclick = dispara;
-        setInterval(atualizaTela, 1000);
+        setInterval(atualizaTela, 100);
     </script>
 </head>
 
 <body>
-
+	<P id="p" ></P>
 </body>
 
 </html>

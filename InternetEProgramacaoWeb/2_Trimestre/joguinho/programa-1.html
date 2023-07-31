@@ -18,6 +18,11 @@
         function desenhaCirculo(evento){
             var x = evento.pageX - tela.offsetLeft;
             var y = evento.pageY - tela.offsetTop;
+            
+            console.log('x '+x)
+            console.log('y '+y)
+            
+            console.log('tela y '+evento.pageY)
 
             pincel.fillStyle = 'yellow';
             pincel.beginPath();
