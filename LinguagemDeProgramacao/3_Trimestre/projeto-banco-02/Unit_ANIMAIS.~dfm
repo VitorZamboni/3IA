@@ -1,0 +1,143 @@
+object Form1: TForm1
+  Left = 192
+  Top = 124
+  Width = 979
+  Height = 563
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 520
+    Top = 8
+    Width = 31
+    Height = 13
+    Caption = 'NAME'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 520
+    Top = 48
+    Width = 24
+    Height = 13
+    Caption = 'SIZE'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 520
+    Top = 88
+    Width = 44
+    Height = 13
+    Caption = 'WEIGHT'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 520
+    Top = 128
+    Width = 29
+    Height = 13
+    Caption = 'AREA'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 520
+    Top = 168
+    Width = 23
+    Height = 13
+    Caption = 'BMP'
+    FocusControl = DBImage1
+  end
+  object DBEdit1: TDBEdit
+    Left = 520
+    Top = 24
+    Width = 134
+    Height = 21
+    DataField = 'NAME'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 520
+    Top = 64
+    Width = 134
+    Height = 21
+    DataField = 'SIZE'
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit
+    Left = 520
+    Top = 104
+    Width = 134
+    Height = 21
+    DataField = 'WEIGHT'
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit
+    Left = 520
+    Top = 144
+    Width = 264
+    Height = 21
+    DataField = 'AREA'
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object DBImage1: TDBImage
+    Left = 520
+    Top = 184
+    Width = 209
+    Height = 169
+    DataField = 'BMP'
+    DataSource = DataSource1
+    TabOrder = 4
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 520
+    Top = 376
+    Width = 240
+    Height = 25
+    DataSource = DataSource_ANIMAIS
+    TabOrder = 5
+  end
+  object Table_ANIMAIS: TTable
+    Active = True
+    DatabaseName = 'DBDEMOS'
+    TableName = 'animals.dbf'
+    Left = 160
+    Top = 88
+    object Table_ANIMAISNAME: TStringField
+      FieldName = 'NAME'
+      Size = 10
+    end
+    object Table_ANIMAISSIZE: TSmallintField
+      FieldName = 'SIZE'
+    end
+    object Table_ANIMAISWEIGHT: TSmallintField
+      FieldName = 'WEIGHT'
+    end
+    object Table_ANIMAISAREA: TStringField
+      FieldName = 'AREA'
+    end
+    object Table_ANIMAISBMP: TBlobField
+      FieldName = 'BMP'
+      BlobType = ftTypedBinary
+      Size = 1
+    end
+  end
+  object DataSource_ANIMAIS: TDataSource
+    Left = 112
+    Top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = Table_ANIMAIS
+    Left = 488
+    Top = 104
+  end
+end
