@@ -1,0 +1,15 @@
+program prjDbDemos;
+
+uses
+  Forms,
+  uPrincipal in 'uPrincipal.pas' {FormPrincipal},
+  uVendas in 'uVendas.pas' {FormVendas};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormVendas, FormVendas);
+  Application.Run;
+end.

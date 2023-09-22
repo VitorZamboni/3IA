@@ -1,0 +1,256 @@
+object FormVendas: TFormVendas
+  Left = 192
+  Top = 124
+  Width = 979
+  Height = 563
+  Caption = 'tabela de vendas'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 232
+    Top = 16
+    Width = 48
+    Height = 13
+    Caption = 'VendorNo'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 232
+    Top = 56
+    Width = 62
+    Height = 13
+    Caption = 'VendorName'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 232
+    Top = 96
+    Width = 44
+    Height = 13
+    Caption = 'Address1'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 232
+    Top = 136
+    Width = 44
+    Height = 13
+    Caption = 'Address2'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 232
+    Top = 176
+    Width = 17
+    Height = 13
+    Caption = 'City'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 232
+    Top = 216
+    Width = 25
+    Height = 13
+    Caption = 'State'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 232
+    Top = 256
+    Width = 15
+    Height = 13
+    Caption = 'Zip'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 232
+    Top = 296
+    Width = 36
+    Height = 13
+    Caption = 'Country'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 232
+    Top = 336
+    Width = 31
+    Height = 13
+    Caption = 'Phone'
+    FocusControl = DBEdit9
+  end
+  object Label10: TLabel
+    Left = 232
+    Top = 376
+    Width = 20
+    Height = 13
+    Caption = 'FAX'
+    FocusControl = DBEdit10
+  end
+  object DBEdit1: TDBEdit
+    Left = 232
+    Top = 32
+    Width = 134
+    Height = 21
+    DataField = 'VendorNo'
+    DataSource = DataSourceVendas
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 232
+    Top = 72
+    Width = 394
+    Height = 21
+    DataField = 'VendorName'
+    DataSource = DataSourceVendas
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit
+    Left = 232
+    Top = 112
+    Width = 394
+    Height = 21
+    DataField = 'Address1'
+    DataSource = DataSourceVendas
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit
+    Left = 232
+    Top = 152
+    Width = 394
+    Height = 21
+    DataField = 'Address2'
+    DataSource = DataSourceVendas
+    TabOrder = 3
+  end
+  object DBEdit5: TDBEdit
+    Left = 232
+    Top = 192
+    Width = 264
+    Height = 21
+    DataField = 'City'
+    DataSource = DataSourceVendas
+    TabOrder = 4
+  end
+  object DBEdit6: TDBEdit
+    Left = 232
+    Top = 232
+    Width = 264
+    Height = 21
+    DataField = 'State'
+    DataSource = DataSourceVendas
+    TabOrder = 5
+  end
+  object DBEdit7: TDBEdit
+    Left = 232
+    Top = 272
+    Width = 134
+    Height = 21
+    DataField = 'Zip'
+    DataSource = DataSourceVendas
+    TabOrder = 6
+  end
+  object DBEdit8: TDBEdit
+    Left = 232
+    Top = 312
+    Width = 199
+    Height = 21
+    DataField = 'Country'
+    DataSource = DataSourceVendas
+    TabOrder = 7
+  end
+  object DBEdit9: TDBEdit
+    Left = 232
+    Top = 352
+    Width = 199
+    Height = 21
+    DataField = 'Phone'
+    DataSource = DataSourceVendas
+    TabOrder = 8
+  end
+  object DBEdit10: TDBEdit
+    Left = 232
+    Top = 392
+    Width = 199
+    Height = 21
+    DataField = 'FAX'
+    DataSource = DataSourceVendas
+    TabOrder = 9
+  end
+  object DBCheckBox1: TDBCheckBox
+    Left = 232
+    Top = 416
+    Width = 97
+    Height = 17
+    Caption = 'Preferred'
+    DataField = 'Preferred'
+    DataSource = DataSourceVendas
+    TabOrder = 10
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 232
+    Top = 448
+    Width = 240
+    Height = 25
+    DataSource = DataSourceVendas
+    TabOrder = 11
+  end
+  object TableVendas: TTable
+    Active = True
+    DatabaseName = 'DBDEMOS'
+    TableName = 'vendors.db'
+    Left = 936
+    object TableVendasVendorNo: TFloatField
+      FieldName = 'VendorNo'
+    end
+    object TableVendasVendorName: TStringField
+      FieldName = 'VendorName'
+      Size = 30
+    end
+    object TableVendasAddress1: TStringField
+      FieldName = 'Address1'
+      Size = 30
+    end
+    object TableVendasAddress2: TStringField
+      FieldName = 'Address2'
+      Size = 30
+    end
+    object TableVendasCity: TStringField
+      FieldName = 'City'
+    end
+    object TableVendasState: TStringField
+      FieldName = 'State'
+    end
+    object TableVendasZip: TStringField
+      FieldName = 'Zip'
+      Size = 10
+    end
+    object TableVendasCountry: TStringField
+      FieldName = 'Country'
+      Size = 15
+    end
+    object TableVendasPhone: TStringField
+      FieldName = 'Phone'
+      Size = 15
+    end
+    object TableVendasFAX: TStringField
+      FieldName = 'FAX'
+      Size = 15
+    end
+    object TableVendasPreferred: TBooleanField
+      FieldName = 'Preferred'
+    end
+  end
+  object DataSourceVendas: TDataSource
+    DataSet = TableVendas
+    Left = 896
+  end
+end
