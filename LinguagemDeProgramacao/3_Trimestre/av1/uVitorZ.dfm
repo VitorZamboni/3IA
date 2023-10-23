@@ -1,0 +1,590 @@
+object Form1: TForm1
+  Left = 192
+  Top = 124
+  Width = 1229
+  Height = 720
+  Caption = 'Orders'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 776
+    Top = 0
+    Width = 40
+    Height = 13
+    Caption = 'OrderNo'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 776
+    Top = 40
+    Width = 35
+    Height = 13
+    Caption = 'CustNo'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 776
+    Top = 80
+    Width = 44
+    Height = 13
+    Caption = 'SaleDate'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 776
+    Top = 120
+    Width = 44
+    Height = 13
+    Caption = 'ShipDate'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 776
+    Top = 160
+    Width = 35
+    Height = 13
+    Caption = 'EmpNo'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 776
+    Top = 200
+    Width = 71
+    Height = 13
+    Caption = 'ShipToContact'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 776
+    Top = 240
+    Width = 62
+    Height = 13
+    Caption = 'ShipToAddr1'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 776
+    Top = 280
+    Width = 62
+    Height = 13
+    Caption = 'ShipToAddr2'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 776
+    Top = 320
+    Width = 51
+    Height = 13
+    Caption = 'ShipToCity'
+    FocusControl = DBEdit9
+  end
+  object Label10: TLabel
+    Left = 776
+    Top = 360
+    Width = 59
+    Height = 13
+    Caption = 'ShipToState'
+    FocusControl = DBEdit10
+  end
+  object Label11: TLabel
+    Left = 776
+    Top = 400
+    Width = 49
+    Height = 13
+    Caption = 'ShipToZip'
+    FocusControl = DBEdit11
+  end
+  object Label12: TLabel
+    Left = 776
+    Top = 440
+    Width = 70
+    Height = 13
+    Caption = 'ShipToCountry'
+    FocusControl = DBEdit12
+  end
+  object Label13: TLabel
+    Left = 776
+    Top = 480
+    Width = 65
+    Height = 13
+    Caption = 'ShipToPhone'
+    FocusControl = DBEdit13
+  end
+  object Label14: TLabel
+    Left = 776
+    Top = 520
+    Width = 38
+    Height = 13
+    Caption = 'ShipVIA'
+    FocusControl = DBEdit14
+  end
+  object Label15: TLabel
+    Left = 776
+    Top = 560
+    Width = 15
+    Height = 13
+    Caption = 'PO'
+    FocusControl = DBEdit15
+  end
+  object Label16: TLabel
+    Left = 776
+    Top = 600
+    Width = 29
+    Height = 13
+    Caption = 'Terms'
+    FocusControl = DBEdit16
+  end
+  object Label17: TLabel
+    Left = 776
+    Top = 640
+    Width = 77
+    Height = 13
+    Caption = 'PaymentMethod'
+    FocusControl = DBEdit17
+  end
+  object Label18: TLabel
+    Left = 776
+    Top = 680
+    Width = 49
+    Height = 13
+    Caption = 'ItemsTotal'
+    FocusControl = DBEdit18
+  end
+  object Label19: TLabel
+    Left = 776
+    Top = 720
+    Width = 41
+    Height = 13
+    Caption = 'TaxRate'
+    FocusControl = DBEdit19
+  end
+  object Label20: TLabel
+    Left = 776
+    Top = 760
+    Width = 32
+    Height = 13
+    Caption = 'Freight'
+    FocusControl = DBEdit20
+  end
+  object Label21: TLabel
+    Left = 776
+    Top = 800
+    Width = 57
+    Height = 13
+    Caption = 'AmountPaid'
+    FocusControl = DBEdit21
+  end
+  object DBEdit1: TDBEdit
+    Left = 776
+    Top = 16
+    Width = 134
+    Height = 21
+    DataField = 'OrderNo'
+    DataSource = DataSourceOrders
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 776
+    Top = 56
+    Width = 134
+    Height = 21
+    DataField = 'CustNo'
+    DataSource = DataSourceOrders
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit
+    Left = 776
+    Top = 96
+    Width = 238
+    Height = 21
+    DataField = 'SaleDate'
+    DataSource = DataSourceOrders
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit
+    Left = 776
+    Top = 136
+    Width = 238
+    Height = 21
+    DataField = 'ShipDate'
+    DataSource = DataSourceOrders
+    TabOrder = 3
+  end
+  object DBEdit5: TDBEdit
+    Left = 776
+    Top = 176
+    Width = 134
+    Height = 21
+    DataField = 'EmpNo'
+    DataSource = DataSourceOrders
+    TabOrder = 4
+  end
+  object DBEdit6: TDBEdit
+    Left = 776
+    Top = 216
+    Width = 264
+    Height = 21
+    DataField = 'ShipToContact'
+    DataSource = DataSourceOrders
+    TabOrder = 5
+  end
+  object DBEdit7: TDBEdit
+    Left = 776
+    Top = 256
+    Width = 394
+    Height = 21
+    DataField = 'ShipToAddr1'
+    DataSource = DataSourceOrders
+    TabOrder = 6
+  end
+  object DBEdit8: TDBEdit
+    Left = 776
+    Top = 296
+    Width = 394
+    Height = 21
+    DataField = 'ShipToAddr2'
+    DataSource = DataSourceOrders
+    TabOrder = 7
+  end
+  object DBEdit9: TDBEdit
+    Left = 776
+    Top = 336
+    Width = 199
+    Height = 21
+    DataField = 'ShipToCity'
+    DataSource = DataSourceOrders
+    TabOrder = 8
+  end
+  object DBEdit10: TDBEdit
+    Left = 776
+    Top = 376
+    Width = 264
+    Height = 21
+    DataField = 'ShipToState'
+    DataSource = DataSourceOrders
+    TabOrder = 9
+  end
+  object DBEdit11: TDBEdit
+    Left = 776
+    Top = 416
+    Width = 134
+    Height = 21
+    DataField = 'ShipToZip'
+    DataSource = DataSourceOrders
+    TabOrder = 10
+  end
+  object DBEdit12: TDBEdit
+    Left = 776
+    Top = 456
+    Width = 264
+    Height = 21
+    DataField = 'ShipToCountry'
+    DataSource = DataSourceOrders
+    TabOrder = 11
+  end
+  object DBEdit13: TDBEdit
+    Left = 776
+    Top = 496
+    Width = 199
+    Height = 21
+    DataField = 'ShipToPhone'
+    DataSource = DataSourceOrders
+    TabOrder = 12
+  end
+  object DBEdit14: TDBEdit
+    Left = 776
+    Top = 536
+    Width = 95
+    Height = 21
+    DataField = 'ShipVIA'
+    DataSource = DataSourceOrders
+    TabOrder = 13
+  end
+  object DBEdit15: TDBEdit
+    Left = 776
+    Top = 576
+    Width = 199
+    Height = 21
+    DataField = 'PO'
+    DataSource = DataSourceOrders
+    TabOrder = 14
+  end
+  object DBEdit16: TDBEdit
+    Left = 776
+    Top = 616
+    Width = 82
+    Height = 21
+    DataField = 'Terms'
+    DataSource = DataSourceOrders
+    TabOrder = 15
+  end
+  object DBEdit17: TDBEdit
+    Left = 776
+    Top = 656
+    Width = 95
+    Height = 21
+    DataField = 'PaymentMethod'
+    DataSource = DataSourceOrders
+    TabOrder = 16
+  end
+  object DBEdit18: TDBEdit
+    Left = 776
+    Top = 696
+    Width = 134
+    Height = 21
+    DataField = 'ItemsTotal'
+    DataSource = DataSourceOrders
+    TabOrder = 17
+  end
+  object DBEdit19: TDBEdit
+    Left = 776
+    Top = 736
+    Width = 134
+    Height = 21
+    DataField = 'TaxRate'
+    DataSource = DataSourceOrders
+    TabOrder = 18
+  end
+  object DBEdit20: TDBEdit
+    Left = 776
+    Top = 776
+    Width = 134
+    Height = 21
+    DataField = 'Freight'
+    DataSource = DataSourceOrders
+    TabOrder = 19
+  end
+  object DBEdit21: TDBEdit
+    Left = 776
+    Top = 816
+    Width = 134
+    Height = 21
+    DataField = 'AmountPaid'
+    DataSource = DataSourceOrders
+    TabOrder = 20
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 48
+    Top = 648
+    Width = 240
+    Height = 25
+    DataSource = DataSourceOrders
+    TabOrder = 21
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 753
+    Height = 545
+    DataSource = DataSourceOrders
+    TabOrder = 22
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Color = clNone
+        Expanded = False
+        FieldName = 'OrderNo'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clHotLight
+        Font.Height = -27
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold, fsStrikeOut]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CustNo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SaleDate'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipDate'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EmpNo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToContact'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToAddr1'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToAddr2'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToCity'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToState'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToZip'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToCountry'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipToPhone'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipVIA'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Terms'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PaymentMethod'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ItemsTotal'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TaxRate'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Freight'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'AmountPaid'
+        Visible = True
+      end>
+  end
+  object DataSourceOrders: TDataSource
+    DataSet = TableOrders
+    Left = 1136
+  end
+  object TableOrders: TTable
+    Active = True
+    DatabaseName = 'DBDEMOS'
+    TableName = 'orders.db'
+    Left = 1168
+    object TableOrdersOrderNo: TFloatField
+      FieldName = 'OrderNo'
+    end
+    object TableOrdersCustNo: TFloatField
+      FieldName = 'CustNo'
+      Required = True
+    end
+    object TableOrdersSaleDate: TDateTimeField
+      FieldName = 'SaleDate'
+    end
+    object TableOrdersShipDate: TDateTimeField
+      FieldName = 'ShipDate'
+    end
+    object TableOrdersEmpNo: TIntegerField
+      FieldName = 'EmpNo'
+      Required = True
+    end
+    object TableOrdersShipToContact: TStringField
+      FieldName = 'ShipToContact'
+    end
+    object TableOrdersShipToAddr1: TStringField
+      FieldName = 'ShipToAddr1'
+      Size = 30
+    end
+    object TableOrdersShipToAddr2: TStringField
+      FieldName = 'ShipToAddr2'
+      Size = 30
+    end
+    object TableOrdersShipToCity: TStringField
+      FieldName = 'ShipToCity'
+      Size = 15
+    end
+    object TableOrdersShipToState: TStringField
+      FieldName = 'ShipToState'
+    end
+    object TableOrdersShipToZip: TStringField
+      FieldName = 'ShipToZip'
+      Size = 10
+    end
+    object TableOrdersShipToCountry: TStringField
+      FieldName = 'ShipToCountry'
+    end
+    object TableOrdersShipToPhone: TStringField
+      FieldName = 'ShipToPhone'
+      Size = 15
+    end
+    object TableOrdersShipVIA: TStringField
+      FieldName = 'ShipVIA'
+      Size = 7
+    end
+    object TableOrdersPO: TStringField
+      FieldName = 'PO'
+      Size = 15
+    end
+    object TableOrdersTerms: TStringField
+      FieldName = 'Terms'
+      Size = 6
+    end
+    object TableOrdersPaymentMethod: TStringField
+      FieldName = 'PaymentMethod'
+      Size = 7
+    end
+    object TableOrdersItemsTotal: TCurrencyField
+      FieldName = 'ItemsTotal'
+    end
+    object TableOrdersTaxRate: TFloatField
+      FieldName = 'TaxRate'
+    end
+    object TableOrdersFreight: TCurrencyField
+      FieldName = 'Freight'
+    end
+    object TableOrdersAmountPaid: TCurrencyField
+      FieldName = 'AmountPaid'
+    end
+  end
+end
