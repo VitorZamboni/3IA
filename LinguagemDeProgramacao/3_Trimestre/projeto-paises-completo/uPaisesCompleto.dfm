@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 192
-  Top = 124
-  Width = 979
-  Height = 563
+  Left = 191
+  Top = 119
+  Width = 980
+  Height = 672
   Caption = 'Sistema Paises Completo'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,41 +10,43 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
   object BevelBarraTopo: TBevel
     Left = 0
     Top = 0
-    Width = 963
+    Width = 964
     Height = 50
     Align = alTop
     Shape = bsTopLine
   end
   object BevelBarraBase: TBevel
-    Left = 96
-    Top = 184
-    Width = 649
-    Height = 50
+    Left = 0
+    Top = 144
+    Width = 921
+    Height = 321
     Shape = bsBottomLine
   end
   object BevelNavigator: TBevel
-    Left = 96
-    Top = 352
-    Width = 649
+    Left = 8
+    Top = 472
+    Width = 937
     Height = 50
   end
   object DBNavigator1: TDBNavigator
-    Left = 272
-    Top = 360
+    Left = 336
+    Top = 488
     Width = 240
     Height = 25
+    DataSource = DataSourceCountry
     TabOrder = 0
   end
   object PanelBarra: TPanel
     Left = 0
     Top = 50
-    Width = 963
+    Width = 964
     Height = 79
     Align = alTop
     TabOrder = 1
@@ -72,8 +74,8 @@ object Form1: TForm1
       ShowHint = True
     end
     object SpeedButton2: TSpeedButton
-      Left = 136
-      Top = 6
+      Left = 154
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -92,8 +94,8 @@ object Form1: TForm1
       NumGlyphs = 2
     end
     object SpeedButton3: TSpeedButton
-      Left = 360
-      Top = 6
+      Left = 301
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -112,8 +114,8 @@ object Form1: TForm1
       NumGlyphs = 2
     end
     object SpeedButton4: TSpeedButton
-      Left = 488
-      Top = 6
+      Left = 448
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -132,8 +134,8 @@ object Form1: TForm1
       NumGlyphs = 2
     end
     object SpeedButton5: TSpeedButton
-      Left = 616
-      Top = 6
+      Left = 594
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -152,8 +154,8 @@ object Form1: TForm1
       NumGlyphs = 2
     end
     object SpeedButton6: TSpeedButton
-      Left = 744
-      Top = 6
+      Left = 741
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -172,8 +174,8 @@ object Form1: TForm1
       NumGlyphs = 2
     end
     object SpeedButton7: TSpeedButton
-      Left = 856
-      Top = 6
+      Left = 888
+      Top = 8
       Width = 65
       Height = 65
       Glyph.Data = {
@@ -190,6 +192,236 @@ object Form1: TForm1
         C8807FF7777777777FF700000000000000007777777777777777333333333333
         3333333333333333333333333333333333333333333333333333}
       NumGlyphs = 2
+    end
+  end
+  object PageControlFichario: TPageControl
+    Left = 16
+    Top = 144
+    Width = 937
+    Height = 297
+    ActivePage = TabSheetListagem
+    TabOrder = 2
+    object TabSheetFicha: TTabSheet
+      Caption = 'Ficha do Pa'#237's'
+      object Label1: TLabel
+        Left = 8
+        Top = 24
+        Width = 28
+        Height = 13
+        Caption = 'Name'
+        FocusControl = DBEdit1
+      end
+      object Label2: TLabel
+        Left = 8
+        Top = 64
+        Width = 32
+        Height = 13
+        Caption = 'Capital'
+        FocusControl = DBEdit2
+      end
+      object Label3: TLabel
+        Left = 8
+        Top = 104
+        Width = 45
+        Height = 13
+        Caption = 'Continent'
+        FocusControl = DBEdit3
+      end
+      object Label4: TLabel
+        Left = 8
+        Top = 144
+        Width = 22
+        Height = 13
+        Caption = 'Area'
+        FocusControl = DBEdit4
+      end
+      object Label5: TLabel
+        Left = 8
+        Top = 184
+        Width = 50
+        Height = 13
+        Caption = 'Population'
+        FocusControl = DBEdit5
+      end
+      object DBEdit1: TDBEdit
+        Left = 8
+        Top = 40
+        Width = 316
+        Height = 21
+        DataField = 'Name'
+        DataSource = DataSourceCountry
+        TabOrder = 0
+      end
+      object DBEdit2: TDBEdit
+        Left = 8
+        Top = 80
+        Width = 316
+        Height = 21
+        DataField = 'Capital'
+        DataSource = DataSourceCountry
+        TabOrder = 1
+      end
+      object DBEdit3: TDBEdit
+        Left = 8
+        Top = 120
+        Width = 316
+        Height = 21
+        DataField = 'Continent'
+        DataSource = DataSourceCountry
+        TabOrder = 2
+      end
+      object DBEdit4: TDBEdit
+        Left = 8
+        Top = 160
+        Width = 134
+        Height = 21
+        DataField = 'Area'
+        DataSource = DataSourceCountry
+        TabOrder = 3
+      end
+      object DBEdit5: TDBEdit
+        Left = 8
+        Top = 200
+        Width = 134
+        Height = 21
+        DataField = 'Population'
+        DataSource = DataSourceCountry
+        TabOrder = 4
+      end
+    end
+    object TabSheetListagem: TTabSheet
+      Caption = 'Listagem dos Pa'#237'ses'
+      ImageIndex = 1
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 929
+        Height = 269
+        Align = alClient
+        DataSource = DataSourceCountry
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+      end
+    end
+  end
+  object StatusBarStatus: TStatusBar
+    Left = 0
+    Top = 595
+    Width = 964
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+  end
+  object DataSourceCountry: TDataSource
+    DataSet = TableCountry
+    Left = 904
+  end
+  object TableCountry: TTable
+    Active = True
+    OnCalcFields = TableCountryCalcFields
+    DatabaseName = 'DBDEMOS'
+    TableName = 'country.db'
+    Left = 936
+    object TableCountryName: TStringField
+      FieldName = 'Name'
+      Size = 24
+    end
+    object TableCountryCapital: TStringField
+      FieldName = 'Capital'
+      Size = 24
+    end
+    object TableCountryContinent: TStringField
+      FieldName = 'Continent'
+      Size = 24
+    end
+    object TableCountryArea: TFloatField
+      FieldName = 'Area'
+      DisplayFormat = '###,##0'
+      EditFormat = '0'
+    end
+    object TableCountryPopulation: TFloatField
+      FieldName = 'Population'
+      DisplayFormat = '###,##0'
+      EditFormat = '0'
+    end
+    object TableCountryDensidade: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'Densidade'
+      DisplayFormat = '#0.00'
+      Calculated = True
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 872
+    object Registro1: TMenuItem
+      Caption = 'Registro'
+      OnClick = Registro1Click
+      object Primeiro1: TMenuItem
+        Caption = 'Primeiro'
+        ShortCut = 16464
+        OnClick = Primeiro1Click
+      end
+      object Anterior1: TMenuItem
+        Caption = 'Anterior'
+        ShortCut = 16449
+        OnClick = Anterior1Click
+      end
+      object Prximo1: TMenuItem
+        Caption = 'Pr'#243'ximo'
+        ShortCut = 16466
+        OnClick = Prximo1Click
+      end
+      object ltimo1: TMenuItem
+        Caption = #218'ltimo'
+        ShortCut = 16469
+        OnClick = ltimo1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Novo1: TMenuItem
+        Caption = 'Novo'
+        ShortCut = 16462
+        OnClick = Novo1Click
+      end
+      object Atualizar1: TMenuItem
+        Caption = 'Atualizar'
+      end
+      object Deletar1: TMenuItem
+        Caption = 'Deletar'
+      end
+      object Cancelar1: TMenuItem
+        Caption = 'Cancelar'
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+        OnClick = Sair1Click
+      end
+    end
+    object Vizualizar1: TMenuItem
+      Caption = 'Vizualizar'
+      object Ficha1: TMenuItem
+        Caption = 'Ficha'
+        RadioItem = True
+      end
+      object Listagem1: TMenuItem
+        Caption = 'Listagem'
+        Checked = True
+        RadioItem = True
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Localizar1: TMenuItem
+        Caption = 'Localizar'
+      end
     end
   end
 end
