@@ -2,7 +2,7 @@ program prjPaisesCompleto;
 
 uses
   Forms,
-  uPrincipal in 'uPrincipal.pas' {Form1};
+  uPaisesCompleto in 'uPaisesCompleto.pas' {Form1};
 
 {$R *.res}
 

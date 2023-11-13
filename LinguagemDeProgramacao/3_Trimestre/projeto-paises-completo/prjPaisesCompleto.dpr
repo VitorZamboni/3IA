@@ -2,12 +2,12 @@ program prjPaisesCompleto;
 
 uses
   Forms,
-  uPaisesCompleto in 'uPaisesCompleto.pas' {Form1};
+  uPaisesCompleto in 'uPaisesCompleto.pas' {FormPaises};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormPaises, FormPaises);
   Application.Run;
 end.

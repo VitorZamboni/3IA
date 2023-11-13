@@ -1,4 +1,4 @@
-object Form1: TForm1
+object FormPaises: TFormPaises
   Left = 191
   Top = 119
   Width = 980
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object BevelBarraTopo: TBevel
@@ -35,7 +36,7 @@ object Form1: TForm1
     Width = 937
     Height = 50
   end
-  object DBNavigator1: TDBNavigator
+  object DBNavigatorPaises: TDBNavigator
     Left = 336
     Top = 488
     Width = 240
@@ -72,12 +73,14 @@ object Form1: TForm1
       NumGlyphs = 2
       ParentShowHint = False
       ShowHint = True
+      OnClick = Novo1Click
     end
-    object SpeedButton2: TSpeedButton
+    object SpeedButtonAtualiza: TSpeedButton
       Left = 154
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Atualiza'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -92,12 +95,16 @@ object Form1: TForm1
         05555555555555777FF5555555555557905555555555555777FF555555555555
         5990555555555555577755555555555555555555555555555555}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = Atualizar1Click
     end
-    object SpeedButton3: TSpeedButton
+    object SpeedButtonCancela: TSpeedButton
       Left = 301
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Cancelar'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -112,12 +119,16 @@ object Form1: TForm1
         99333773FF3333777733339993333339933333773FFFFFF77333333999999999
         3333333777333777333333333999993333333333377777333333}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = Cancelar1Click
     end
-    object SpeedButton4: TSpeedButton
+    object SpeedButtonApaga: TSpeedButton
       Left = 448
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Apagar'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -132,12 +143,16 @@ object Form1: TForm1
         B0557777FF577777F7F500000E055550805577777F7555575755500000555555
         05555777775555557F5555000555555505555577755555557555}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = Deletar1Click
     end
-    object SpeedButton5: TSpeedButton
+    object SpeedButtonLocaliza: TSpeedButton
       Left = 594
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Localizar'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -152,12 +167,15 @@ object Form1: TForm1
         333337F3373337F33333307F8F8F70333333373FF333F7333333330777770333
         333333773FF77333333333370007333333333333777333333333}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
     end
-    object SpeedButton6: TSpeedButton
+    object SpeedButtonFicha: TSpeedButton
       Left = 741
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Ficha Individual'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -172,12 +190,16 @@ object Form1: TForm1
         0005555555575FF7777555555555000555555555555577755555555555555555
         5555555555555555555555555555555555555555555555555555}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = Ficha1Click
     end
-    object SpeedButton7: TSpeedButton
+    object SpeedButtonListagem: TSpeedButton
       Left = 888
       Top = 8
       Width = 65
       Height = 65
+      Hint = 'Listagem'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -192,6 +214,9 @@ object Form1: TForm1
         C8807FF7777777777FF700000000000000007777777777777777333333333333
         3333333333333333333333333333333333333333333333333333}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = Listagem1Click
     end
   end
   object PageControlFichario: TPageControl
@@ -199,8 +224,10 @@ object Form1: TForm1
     Top = 144
     Width = 937
     Height = 297
-    ActivePage = TabSheetListagem
+    ActivePage = TabSheetFicha
     TabOrder = 2
+    OnChange = PageControlFicharioChange
+    OnChanging = PageControlFicharioChanging
     object TabSheetFicha: TTabSheet
       Caption = 'Ficha do Pa'#237's'
       object Label1: TLabel
@@ -390,12 +417,15 @@ object Form1: TForm1
       end
       object Atualizar1: TMenuItem
         Caption = 'Atualizar'
+        OnClick = Atualizar1Click
       end
       object Deletar1: TMenuItem
         Caption = 'Deletar'
+        OnClick = Deletar1Click
       end
       object Cancelar1: TMenuItem
         Caption = 'Cancelar'
+        OnClick = Cancelar1Click
       end
       object N2: TMenuItem
         Caption = '-'
@@ -410,17 +440,20 @@ object Form1: TForm1
       object Ficha1: TMenuItem
         Caption = 'Ficha'
         RadioItem = True
+        OnClick = Ficha1Click
       end
       object Listagem1: TMenuItem
         Caption = 'Listagem'
         Checked = True
         RadioItem = True
+        OnClick = Listagem1Click
       end
       object N3: TMenuItem
         Caption = '-'
       end
       object Localizar1: TMenuItem
         Caption = 'Localizar'
+        OnClick = Localizar1Click
       end
     end
   end

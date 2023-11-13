@@ -8,19 +8,19 @@ uses
   StdCtrls, Mask, Grids, DBGrids;
 
 type
-  TForm1 = class(TForm)
+  TFormPaises = class(TForm)
     BevelBarraTopo: TBevel;
     BevelBarraBase: TBevel;
     BevelNavigator: TBevel;
-    DBNavigator1: TDBNavigator;
+    DBNavigatorPaises: TDBNavigator;
     PanelBarra: TPanel;
     SpeedButtonNovo: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    SpeedButton4: TSpeedButton;
-    SpeedButton5: TSpeedButton;
-    SpeedButton6: TSpeedButton;
-    SpeedButton7: TSpeedButton;
+    SpeedButtonAtualiza: TSpeedButton;
+    SpeedButtonCancela: TSpeedButton;
+    SpeedButtonApaga: TSpeedButton;
+    SpeedButtonLocaliza: TSpeedButton;
+    SpeedButtonFicha: TSpeedButton;
+    SpeedButtonListagem: TSpeedButton;
     DataSourceCountry: TDataSource;
     TableCountry: TTable;
     PageControlFichario: TPageControl;
@@ -70,15 +70,27 @@ type
     procedure Prximo1Click(Sender: TObject);
     procedure ltimo1Click(Sender: TObject);
     procedure Novo1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Cancelar1Click(Sender: TObject);
+    procedure Atualizar1Click(Sender: TObject);
+    procedure Deletar1Click(Sender: TObject);
+    procedure Ficha1Click(Sender: TObject);
+    procedure Listagem1Click(Sender: TObject);
+    procedure PageControlFicharioChanging(Sender: TObject;
+      var AllowChange: Boolean);
+    procedure PageControlFicharioChange(Sender: TObject);
+    procedure Localizar1Click(Sender: TObject);
   private
     { Private declarations }
     Alterado: boolean;
   public
     { Public declarations }
+    procedure Desabilita;
+    procedure Habilita;
   end;
 
 var
-  Form1: TForm1;
+  FormPaises: TFormPaises;
 
 implementation
 
@@ -86,17 +98,17 @@ uses Math;
 
 {$R *.dfm}
 
-procedure TForm1.TableCountryCalcFields(DataSet: TDataSet);
+procedure TFormPaises.TableCountryCalcFields(DataSet: TDataSet);
 begin
   TableCountryDensidade.Value := (TableCountryPopulation.Value / TableCountryArea.Value);  
 end;
 
-procedure TForm1.Sair1Click(Sender: TObject);
+procedure TFormPaises.Sair1Click(Sender: TObject);
 begin
   self.Close;
 end;
 
-procedure TForm1.Registro1Click(Sender: TObject);
+procedure TFormPaises.Registro1Click(Sender: TObject);
 begin
   Primeiro1.Enabled := (not TableCountry.Bof);
   Anterior1.Enabled := (not TableCountry.Bof);
@@ -104,30 +116,168 @@ begin
   ltimo1.Enabled := (not TableCountry.Eof);
 end;
 
-procedure TForm1.Primeiro1Click(Sender: TObject);
+procedure TFormPaises.Primeiro1Click(Sender: TObject);
 begin
   TableCountry.First;
 end;
 
-procedure TForm1.Anterior1Click(Sender: TObject);
+procedure TFormPaises.Anterior1Click(Sender: TObject);
 begin
   TableCountry.Prior;
 end;
 
-procedure TForm1.Prximo1Click(Sender: TObject);
+procedure TFormPaises.Prximo1Click(Sender: TObject);
 begin
   TableCountry.Next;
 end;
 
-procedure TForm1.ltimo1Click(Sender: TObject);
+procedure TFormPaises.ltimo1Click(Sender: TObject);
 begin
   TableCountry.Last;
 end;
 
-procedure TForm1.Novo1Click(Sender: TObject);
+procedure TFormPaises.Novo1Click(Sender: TObject);
 begin
   TableCountry.Append;
   Alterado := True;
+  Desabilita;
+
+end;
+
+procedure TFormPaises.Desabilita;
+begin
+  if ((TableCountry.State = dsEdit) or
+      (TableCountry.State = dsInsert)) then
+  begin
+    SpeedButtonNovo.Enabled := false;
+    Novo1.Enabled := false;
+    SpeedButtonApaga.Enabled := false;
+    Deletar1.Enabled := false;
+    SpeedButtonLocaliza.Enabled := false;
+    Localizar1.Enabled := false;
+    SpeedButtonFicha.Enabled := false;
+    Ficha1.Enabled := false;
+    SpeedButtonListagem.Enabled := false;
+    Listagem1.Enabled := false;
+    DBNavigatorPaises.Enabled := false;
+
+    SpeedButtonAtualiza.Enabled := true;
+    Atualizar1.Enabled := true;
+    SpeedButtonCancela.Enabled := true;
+    Cancelar1.Enabled := true;
+  end;
+end;
+
+procedure TFormPaises.Habilita;
+begin
+  SpeedButtonNovo.Enabled := true;
+  Novo1.Enabled := true;
+  SpeedButtonApaga.Enabled := true;
+  Deletar1.Enabled := true;
+  SpeedButtonLocaliza.Enabled := true;
+  Localizar1.Enabled := true;
+  SpeedButtonFicha.Enabled := true;
+  Ficha1.Enabled := true;
+  SpeedButtonListagem.Enabled := true;
+  Listagem1.Enabled := true;
+  DBNavigatorPaises.Enabled := true;
+
+  SpeedButtonAtualiza.Enabled := false;
+  Atualizar1.Enabled := false;
+  SpeedButtonCancela.Enabled := false;
+  Cancelar1.Enabled := false;
+end;
+
+procedure TFormPaises.FormCreate(Sender: TObject);
+begin
+  Habilita;
+end;
+
+procedure TFormPaises.Cancelar1Click(Sender: TObject);
+begin
+  TableCountry.Cancel;
+  Alterado := false;
+  Habilita;
+end;
+
+procedure TFormPaises.Atualizar1Click(Sender: TObject);
+begin
+  TableCountry.Post;
+  Alterado := false;
+  Habilita;
+end;
+
+procedure TFormPaises.Deletar1Click(Sender: TObject);
+var
+  Resposta: integer;
+begin
+  Resposta := MessageDlg('Tem certeza que deseja excluir, ' +
+              TableCountry.FieldByName('Name').AsString + '?',
+              mtWarning,
+              [mbYes, mbNo], 0);
+  if (Resposta = IDYES) then
+  begin
+    TableCountry.Delete;
+    Alterado := false;
+    Habilita;
+  end;
+end;
+
+procedure TFormPaises.Ficha1Click(Sender: TObject);
+begin
+  Ficha1.Enabled := true;
+  PageControlFichario.ActivePage := TabSheetFicha;
+  SpeedButtonFicha.Down := true;
+  SpeedButtonNovo.Enabled := true;
+  Novo1.Enabled := true;
+end;
+
+procedure TFormPaises.Listagem1Click(Sender: TObject);
+begin
+  Listagem1.Enabled := true;
+  PageControlFichario.ActivePage := TabSheetListagem;
+  SpeedButtonNovo.Enabled := false;
+  Novo1.Enabled := false;
+end;
+
+procedure TFormPaises.PageControlFicharioChanging(Sender: TObject;
+  var AllowChange: Boolean);
+begin
+ if (TableCountry.State = dsEdit) or
+  (TableCountry.State = dsInsert) then
+  AllowChange := false
+ else
+  AllowChange := true;
+end;
+
+procedure TFormPaises.PageControlFicharioChange(Sender: TObject);
+begin
+  if (PageControlFichario.ActivePage = TabSheetFicha) then
+  begin
+    Ficha1.Checked := true;
+    SpeedButtonFicha.Down := true;
+  end
+  else
+  begin
+    Listagem1.Checked := true;
+    SpeedButtonListagem.Down := true;
+  end
+end;
+
+procedure TFormPaises.Localizar1Click(Sender: TObject);
+var
+  Chave : String;
+begin
+  Chave := InputBox('Localizar', 'Digite o nome do país', '');
+  if Chave <> '' then
+  begin
+    TableCountry.SetKey;
+    if not TableCountry.FindKey([Chave]) then
+      begin
+        Beep;
+        MessageDlg('não foi possivel localizar o pais' + #13 + Chave, mtInformation, [mbOK], 0);
+      end;
+  end;
 end;
 
 end.
